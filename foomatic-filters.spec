@@ -1,3 +1,6 @@
+# TODO:
+# - SECURITY: http://securitytracker.com/alerts/2004/Sep/1011290.html
+#
 
 %bcond_with	ppr	# ppr support disabled until we have ppr.spec in working shape
 
