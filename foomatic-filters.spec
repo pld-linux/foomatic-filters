@@ -7,9 +7,9 @@ Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		Applications/System
-URL:		http://www.linuxprinting.org/foomatic.html
 Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{version}.tar.gz
 # Source0-md5: 970e7fed64ee9f56e28ccd798af88918
+URL:		http://www.linuxprinting.org/foomatic.html
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	rpm-perlprov
@@ -101,14 +101,13 @@ PPD (PPD-O-Matic) uzyskanym z Linux Printing Database.
 %build
 %{__aclocal}
 %{__autoconf}
-
 %configure
-
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR="$RPM_BUILD_ROOT"
+%{__make} install \
+	DESTDIR="$RPM_BUILD_ROOT"
 
 ln -sf %{_bindir}/foomatic-rip $RPM_BUILD_ROOT%{_libdir}/cups/filter/cupsomatic
 
@@ -118,7 +117,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog TODO README USAGE
-
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/foomatic/direct
 %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/foomatic/filter.conf
 %attr(755,root,root) %{_bindir}/foomatic-rip
