@@ -106,6 +106,8 @@ PPD (PPD-O-Matic) uzyskanym z Linux Printing Database.
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR="$RPM_BUILD_ROOT"
 
+ln -sf %{_bindir}/foomatic-rip $RPM_BUILD_ROOT%{_libdir}/cups/filter/cupsomatic
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -125,7 +127,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n cups-foomatic
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/cups/filter/foomatic-rip
+%attr(755,root,root) %{_libdir}/cups/filter/*
 
 %files ppr
 %defattr(644,root,root,755)
