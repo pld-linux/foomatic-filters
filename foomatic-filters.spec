@@ -46,7 +46,7 @@ NOTE: This script is needed in a few situations only and may not work
 with some Ghostscript versions. Moreover in some situations his
 presence in the system may have effect that Your printer will
 not print. So - Do not install this package if You don't know
-what You're doing. 
+what You're doing.
 
 %description gswrapper -l pl
 Ma³y skrypt uzdatniaj±cy Ghostscripta. Obrabia parametry tak, ¿eby
@@ -57,7 +57,7 @@ UWAGA: Ten skrypt jest potrzebny tylko w kilku przypadkach i mo¿e
 nie dzia³ac z niektórymi wersjami Ghostscripta. Ponadto w niektórych
 sytuacjach jego obecno¶æ w systemie mo¿e spowodowaæ, ¿e drukarka nie
 bêdzie drukowa³a. Tak wiêc - nie instaluj tego pakietu, je¶li nie
-wiesz, co robisz. 
+wiesz, co robisz.
 
 %package -n cups-filter-foomatic
 Summary:	cupsomatic - CUPS filter
