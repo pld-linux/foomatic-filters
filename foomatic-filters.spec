@@ -34,6 +34,7 @@ Summary(pl):	wrapper dla ghostscripta do u¿ycia z foomatic
 Group:		Applications/System
 Requires:	ghostscript
 Requires:	a2ps
+Obsoletes:	foomatic-gswrapper
 
 %description gswrapper
 A little Ghostscript regularization script. It massages arguments to
@@ -81,6 +82,7 @@ Summary(pl):	ppromatic - interfejs do PPR
 Group:		Applications/System
 Requires:	foomatic-filters = %{version}
 Requires:	ppr
+Obsoletes:	foomatic-ppr
 
 %description ppr
 ppromatic is intended to be used as a PPR interface for printers
