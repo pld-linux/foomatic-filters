@@ -11,7 +11,7 @@ URL:		http://www.linuxprinting.org/foomatic.html
 Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
 BuildRequires:	automake
-Requires:	perl
+BuildRequires:	rpm-perlprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
