@@ -1,10 +1,13 @@
+
+%bcond_with	ppr	# ppr support disabled until we have ppr.spec in working shape
+
 %include	/usr/lib/rpm/macros.perl
 
 Summary:	System for using free software printer drivers
 Summary(pl):	System umo¿liwiaj±cy u¿ywanie darmowych sterowników drukarek
 Name:		foomatic-filters
 Version:	3.0.1
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/System
@@ -135,7 +138,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_ulibdir}/cups/filter/*
 
+%if %{with ppr}
 %files ppr
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_ulibdir}/ppr/interfaces/foomatic-rip
 %attr(755,root,root) %{_ulibdir}/ppr/lib/foomatic-rip
+%endif
