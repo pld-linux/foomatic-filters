@@ -2,7 +2,7 @@
 Summary:	System for using free software printer drivers
 Summary(pl):	System umo¿liwiaj±cy u¿ywanie darmowych sterowników drukarek
 Name:		foomatic-filters
-Version:	2.9.0
+Version:	2.9.1
 Release:	1
 License:	GPL
 Group:		Applications/System
@@ -10,7 +10,7 @@ URL:		http://www.linuxprinting.org/foomatic.html
 Source0:	http://www.linuxprinting.org/download/%{name}/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	perl-devel
+Requires:	perl
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -61,6 +61,7 @@ Summary:	cupsomatic - CUPS filter
 Summary(pl):	cupsomatic - filtr do CUPS
 Group:		Applications/System
 Requires:	cups
+Requires:	foomatic-filters = %{version}
 Obsoletes:	foomatic-cups
 
 %description -n cups-foomatic
@@ -77,6 +78,7 @@ Database.
 Summary:	ppromatic - PPR interface
 Summary(pl):	ppromatic - interfejs do PPR
 Group:		Applications/System
+Requires:	foomatic-filters = %{version}
 Requires:	ppr
 
 %description ppr
