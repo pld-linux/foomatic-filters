@@ -2,8 +2,8 @@
 Summary:	System for using free software printer drivers
 Summary(pl):	System umo¿liwiaj±cy u¿ywanie darmowych sterowników drukarek
 Name:		foomatic-filters
-Version:	2.9.1
-Release:	1
+Version:	3.0.0
+Release:	0.1
 Epoch:		1
 License:	GPL
 Group:		Applications/System
@@ -58,20 +58,21 @@ sytuacjach jego obecno¶æ w systemie mo¿e spowodowaæ, ¿e drukarka nie
 bêdzie drukowa³a. Tak wiêc - nie instaluj tego pakietu, je¶li nie
 wiesz, co robisz. 
 
-%package -n cups-foomatic
+%package -n cups-filter-foomatic
 Summary:	cupsomatic - CUPS filter
 Summary(pl):	cupsomatic - filtr do CUPS
 Group:		Applications/System
 Requires:	cups
 Requires:	foomatic-filters = %{version}
 Obsoletes:	foomatic-cups
+Obsoletes:	cups-foomatic
 
-%description -n cups-foomatic
+%description -n cups-filter-foomatic
 Cupsomatic is intended to be used as a CUPS filter for printers
 defined in a PPD file (CUPS-O-Matic or PPD-O-Matic) obtained from the
 Linux Printing Database.
 
-%description -n cups-foomatic -l pl
+%description -n cups-filter-foomatic -l pl
 Cupsomatic jest filtrem do CUPS dla drukarek zdefiniowanych w pliku
 PPD (CUPS-O-Matic lub PPD-O-Matic), uzyskanym z Linux Printing
 Database.
@@ -127,7 +128,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/foomatic-gswrapper
 %{_mandir}/man1/foomatic-gswrapper*
 
-%files -n cups-foomatic
+%files -n cups-filter-foomatic
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/cups/filter/*
 
