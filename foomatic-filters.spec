@@ -16,7 +16,6 @@ License:	GPL
 Group:		Applications/System
 Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{version}.tar.gz
 # Source0-md5:	f0f4c90fa0ae346f53bf19a165e071a6
-# Source0-size:	125875
 URL:		http://www.linuxprinting.org/foomatic.html
 BuildRequires:	a2ps
 BuildRequires:	autoconf
