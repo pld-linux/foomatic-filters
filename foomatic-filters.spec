@@ -11,6 +11,7 @@ Group:		Applications/System
 Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{version}.tar.gz
 # Source0-md5:	afa2bfcee2661252ec56af5616017d1e
 URL:		http://www.linuxprinting.org/foomatic.html
+BuildRequires:	a2ps
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	rpm-perlprov
