@@ -64,7 +64,7 @@ Summary:	cupsomatic - CUPS filter
 Summary(pl):	cupsomatic - filtr do CUPS
 Group:		Applications/System
 Requires:	cups
-Requires:	foomatic-filters = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 Obsoletes:	foomatic-cups
 Obsoletes:	cups-foomatic
 
@@ -82,7 +82,7 @@ Database.
 Summary:	ppromatic - PPR interface
 Summary(pl):	ppromatic - interfejs do PPR
 Group:		Applications/System
-Requires:	foomatic-filters = %{version}
+Requires:	%{name} = %{epoch}:%{version}
 Requires:	ppr
 Obsoletes:	foomatic-ppr
 
