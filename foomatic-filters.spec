@@ -1,17 +1,15 @@
 %include	/usr/lib/rpm/macros.perl
 
-%define		_rc	rc3
-
 Summary:	System for using free software printer drivers
 Summary(pl):	System umo¿liwiaj±cy u¿ywanie darmowych sterowników drukarek
 Name:		foomatic-filters
 Version:	3.0.1
-Release:	0.%{_rc}.1
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{version}%{_rc}.tar.gz
-# Source0-md5:	6df5bbf9066aba767da53827ffd82e1d
+Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{version}.tar.gz
+# Source0-md5:	afa2bfcee2661252ec56af5616017d1e
 URL:		http://www.linuxprinting.org/foomatic.html
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -101,7 +99,7 @@ ppromatic jest interfejsem do PPR dla drukarek zdefiniowanych w pliku
 PPD (PPD-O-Matic) uzyskanym z Linux Printing Database.
 
 %prep
-%setup -q -n %{name}-%{version}%{_rc}
+%setup -q
 
 %build
 %{__aclocal}
