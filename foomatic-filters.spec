@@ -18,6 +18,8 @@ BuildRequires:	automake
 BuildRequires:	rpm-perlprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%define	_ulibdir	%{_prefix}/lib
+
 %description
 Foomatic is a system for using free software printer drivers with
 common spoolers on Unix. It supports LPD, PDQ, CUPS, the VA Linux
@@ -112,7 +114,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR="$RPM_BUILD_ROOT"
 
-ln -sf %{_bindir}/foomatic-rip $RPM_BUILD_ROOT%{_libdir}/cups/filter/cupsomatic
+ln -sf %{_bindir}/foomatic-rip $RPM_BUILD_ROOT%{_ulibdir}/cups/filter/cupsomatic
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -132,9 +134,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n cups-filter-foomatic
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/cups/filter/*
+%attr(755,root,root) %{_ulibdir}/cups/filter/*
 
 %files ppr
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/ppr/interfaces/foomatic-rip
-%attr(755,root,root) %{_libdir}/ppr/lib/foomatic-rip
+%attr(755,root,root) %{_ulibdir}/ppr/interfaces/foomatic-rip
+%attr(755,root,root) %{_ulibdir}/ppr/lib/foomatic-rip
