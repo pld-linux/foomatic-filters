@@ -27,24 +27,23 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Foomatic is a system for using free software printer drivers with
-common spoolers on Unix. It supports LPD, PDQ, CUPS, the VA Linux
-LPD, LPRng, PPR, and direct spooler-less printing and any free
-software driver for which execution data has been entered in the
-database.
+common spoolers on Unix. It supports LPD, PDQ, CUPS, the VA Linux LPD,
+LPRng, PPR, and direct spooler-less printing and any free software
+driver for which execution data has been entered in the database.
 
 %description -l pl
-Foomatic to system pozwalaj±cy na u¿ywanie wolnodostêpnych
-sterowników drukarek z popularnymi uniksowymi serwerami wydruków.
-Obs³uguje LPD, PDQ, CUPS, VA Linux LPD, LPRng, PPR i bezpo¶rednie
-drukowanie bez kolejkowania oraz dowolny wolnodostêpny sterownik,
-dla którego parametry zosta³y wprowadzone do bazy danych.
+Foomatic to system pozwalaj±cy na u¿ywanie wolnodostêpnych sterowników
+drukarek z popularnymi uniksowymi serwerami wydruków. Obs³uguje LPD,
+PDQ, CUPS, VA Linux LPD, LPRng, PPR i bezpo¶rednie drukowanie bez
+kolejkowania oraz dowolny wolnodostêpny sterownik, dla którego
+parametry zosta³y wprowadzone do bazy danych.
 
 %package gswrapper
 Summary:	foomatic wrapper for ghostscript
 Summary(pl):	wrapper dla ghostscripta do u¿ycia z foomatic
 Group:		Applications/System
-Requires:	ghostscript
 Requires:	a2ps
+Requires:	ghostscript
 Obsoletes:	foomatic-gswrapper
 
 %description gswrapper
@@ -54,17 +53,17 @@ and errors etc on stderr.
 
 NOTE: This script is needed in a few situations only and may not work
 with some Ghostscript versions. Moreover in some situations his
-presence in the system may have effect that Your printer will
-not print. So - Do not install this package if You don't know
-what You're doing.
+presence in the system may have effect that Your printer will not
+print. So - Do not install this package if You don't know what You're
+doing.
 
 %description gswrapper -l pl
 Ma³y skrypt uzdatniaj±cy Ghostscripta. Obrabia parametry tak, ¿eby
 Ghostscript dzia³a³ w³a¶ciwie jako filtr, generuj±c dane wyj¶ciowe na
 stdout, a b³êdy na stderr.
 
-UWAGA: Ten skrypt jest potrzebny tylko w kilku przypadkach i mo¿e
-nie dzia³ac z niektórymi wersjami Ghostscripta. Ponadto w niektórych
+UWAGA: Ten skrypt jest potrzebny tylko w kilku przypadkach i mo¿e nie
+dzia³ac z niektórymi wersjami Ghostscripta. Ponadto w niektórych
 sytuacjach jego obecno¶æ w systemie mo¿e spowodowaæ, ¿e drukarka nie
 bêdzie drukowa³a. Tak wiêc - nie instaluj tego pakietu, je¶li nie
 wiesz, co robisz.
@@ -73,8 +72,8 @@ wiesz, co robisz.
 Summary:	cupsomatic - CUPS filter
 Summary(pl):	cupsomatic - filtr do CUPS
 Group:		Applications/System
-Requires:	cups
 Requires:	%{name} = %{epoch}:%{version}
+Requires:	cups
 Obsoletes:	foomatic-cups
 Obsoletes:	cups-foomatic
 
@@ -127,8 +126,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog TODO README USAGE
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/foomatic/direct
-%config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/foomatic/filter.conf
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/foomatic/direct
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/foomatic/filter.conf
 %attr(755,root,root) %{_bindir}/foomatic-rip
 %{_mandir}/man1/foomatic-rip*
 
