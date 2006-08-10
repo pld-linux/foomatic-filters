@@ -1,11 +1,7 @@
-# TODO:
-# - SECURITY: http://securitytracker.com/alerts/2004/Sep/1011290.html
 #
-
 %bcond_with	ppr	# ppr support disabled until we have ppr.spec in working shape
-
+#
 %include	/usr/lib/rpm/macros.perl
-
 Summary:	System for using free software printer drivers
 Summary(pl):	System umo¿liwiaj±cy u¿ywanie darmowych sterowników drukarek
 Name:		foomatic-filters
