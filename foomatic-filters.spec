@@ -6,7 +6,7 @@ Summary:	System for using free software printer drivers
 Summary(pl):	System umo¿liwiaj±cy u¿ywanie darmowych sterowników drukarek
 Name:		foomatic-filters
 Version:	3.0.2
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/System
@@ -122,6 +122,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc ChangeLog TODO README USAGE
+%dir %{_sysconfdir}/foomatic
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/foomatic/direct
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/foomatic/filter.conf
 %attr(755,root,root) %{_bindir}/foomatic-rip
