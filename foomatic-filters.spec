@@ -3,7 +3,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	System for using free software printer drivers
-Summary(pl):	System umoøliwiaj±cy uøywanie darmowych sterownikÛw drukarek
+Summary(pl.UTF-8):   System umo≈ºliwiajƒÖcy u≈ºywanie darmowych sterownik√≥w drukarek
 Name:		foomatic-filters
 Version:	3.0.2
 Release:	2
@@ -27,16 +27,16 @@ common spoolers on Unix. It supports LPD, PDQ, CUPS, the VA Linux LPD,
 LPRng, PPR, and direct spooler-less printing and any free software
 driver for which execution data has been entered in the database.
 
-%description -l pl
-Foomatic to system pozwalaj±cy na uøywanie wolnodostÍpnych sterownikÛw
-drukarek z popularnymi uniksowymi serwerami wydrukÛw. Obs≥uguje LPD,
-PDQ, CUPS, VA Linux LPD, LPRng, PPR i bezpo∂rednie drukowanie bez
-kolejkowania oraz dowolny wolnodostÍpny sterownik, dla ktÛrego
-parametry zosta≥y wprowadzone do bazy danych.
+%description -l pl.UTF-8
+Foomatic to system pozwalajƒÖcy na u≈ºywanie wolnodostƒôpnych sterownik√≥w
+drukarek z popularnymi uniksowymi serwerami wydruk√≥w. Obs≈Çuguje LPD,
+PDQ, CUPS, VA Linux LPD, LPRng, PPR i bezpo≈õrednie drukowanie bez
+kolejkowania oraz dowolny wolnodostƒôpny sterownik, dla kt√≥rego
+parametry zosta≈Çy wprowadzone do bazy danych.
 
 %package gswrapper
 Summary:	foomatic wrapper for ghostscript
-Summary(pl):	wrapper dla ghostscripta do uøycia z foomatic
+Summary(pl.UTF-8):   wrapper dla ghostscripta do u≈ºycia z foomatic
 Group:		Applications/System
 Requires:	a2ps
 Requires:	ghostscript
@@ -53,20 +53,20 @@ presence in the system may have effect that Your printer will not
 print. So - Do not install this package if You don't know what You're
 doing.
 
-%description gswrapper -l pl
-Ma≥y skrypt uzdatniaj±cy Ghostscripta. Obrabia parametry tak, øeby
-Ghostscript dzia≥a≥ w≥a∂ciwie jako filtr, generuj±c dane wyj∂ciowe na
-stdout, a b≥Ídy na stderr.
+%description gswrapper -l pl.UTF-8
+Ma≈Çy skrypt uzdatniajƒÖcy Ghostscripta. Obrabia parametry tak, ≈ºeby
+Ghostscript dzia≈Ça≈Ç w≈Ça≈õciwie jako filtr, generujƒÖc dane wyj≈õciowe na
+stdout, a b≈Çƒôdy na stderr.
 
-UWAGA: Ten skrypt jest potrzebny tylko w kilku przypadkach i moøe nie
-dzia≥ac z niektÛrymi wersjami Ghostscripta. Ponadto w niektÛrych
-sytuacjach jego obecno∂Ê w systemie moøe spowodowaÊ, øe drukarka nie
-bÍdzie drukowa≥a. Tak wiÍc - nie instaluj tego pakietu, je∂li nie
+UWAGA: Ten skrypt jest potrzebny tylko w kilku przypadkach i mo≈ºe nie
+dzia≈Çac z niekt√≥rymi wersjami Ghostscripta. Ponadto w niekt√≥rych
+sytuacjach jego obecno≈õƒá w systemie mo≈ºe spowodowaƒá, ≈ºe drukarka nie
+bƒôdzie drukowa≈Ça. Tak wiƒôc - nie instaluj tego pakietu, je≈õli nie
 wiesz, co robisz.
 
 %package -n cups-filter-foomatic
 Summary:	cupsomatic - CUPS filter
-Summary(pl):	cupsomatic - filtr do CUPS
+Summary(pl.UTF-8):   cupsomatic - filtr do CUPS
 Group:		Applications/System
 Requires:	%{name} = %{epoch}:%{version}
 Requires:	cups
@@ -78,14 +78,14 @@ Cupsomatic is intended to be used as a CUPS filter for printers
 defined in a PPD file (CUPS-O-Matic or PPD-O-Matic) obtained from the
 Linux Printing Database.
 
-%description -n cups-filter-foomatic -l pl
+%description -n cups-filter-foomatic -l pl.UTF-8
 Cupsomatic jest filtrem do CUPS dla drukarek zdefiniowanych w pliku
 PPD (CUPS-O-Matic lub PPD-O-Matic), uzyskanym z Linux Printing
 Database.
 
 %package ppr
 Summary:	ppromatic - PPR interface
-Summary(pl):	ppromatic - interfejs do PPR
+Summary(pl.UTF-8):   ppromatic - interfejs do PPR
 Group:		Applications/System
 Requires:	%{name} = %{epoch}:%{version}
 Requires:	ppr
@@ -96,7 +96,7 @@ ppromatic is intended to be used as a PPR interface for printers
 defined in a PPD-O-Matic PPD file obtained from the Linux Printing
 Database.
 
-%description ppr -l pl
+%description ppr -l pl.UTF-8
 ppromatic jest interfejsem do PPR dla drukarek zdefiniowanych w pliku
 PPD (PPD-O-Matic) uzyskanym z Linux Printing Database.
 
