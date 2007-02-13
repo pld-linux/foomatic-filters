@@ -3,7 +3,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	System for using free software printer drivers
-Summary(pl.UTF-8):   System umożliwiający używanie darmowych sterowników drukarek
+Summary(pl.UTF-8):	System umożliwiający używanie darmowych sterowników drukarek
 Name:		foomatic-filters
 Version:	3.0.2
 Release:	2
@@ -36,7 +36,7 @@ parametry zostały wprowadzone do bazy danych.
 
 %package gswrapper
 Summary:	foomatic wrapper for ghostscript
-Summary(pl.UTF-8):   wrapper dla ghostscripta do użycia z foomatic
+Summary(pl.UTF-8):	wrapper dla ghostscripta do użycia z foomatic
 Group:		Applications/System
 Requires:	a2ps
 Requires:	ghostscript
@@ -66,7 +66,7 @@ wiesz, co robisz.
 
 %package -n cups-filter-foomatic
 Summary:	cupsomatic - CUPS filter
-Summary(pl.UTF-8):   cupsomatic - filtr do CUPS
+Summary(pl.UTF-8):	cupsomatic - filtr do CUPS
 Group:		Applications/System
 Requires:	%{name} = %{epoch}:%{version}
 Requires:	cups
@@ -85,7 +85,7 @@ Database.
 
 %package ppr
 Summary:	ppromatic - PPR interface
-Summary(pl.UTF-8):   ppromatic - interfejs do PPR
+Summary(pl.UTF-8):	ppromatic - interfejs do PPR
 Group:		Applications/System
 Requires:	%{name} = %{epoch}:%{version}
 Requires:	ppr
