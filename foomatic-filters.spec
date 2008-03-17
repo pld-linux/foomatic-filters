@@ -2,16 +2,17 @@
 %bcond_with	ppr	# ppr support disabled until we have ppr.spec in working shape
 #
 %include	/usr/lib/rpm/macros.perl
+%define		snap	20080317
 Summary:	System for using free software printer drivers
 Summary(pl.UTF-8):	System umożliwiający używanie darmowych sterowników drukarek
 Name:		foomatic-filters
-Version:	3.0.2
+Version:	3.0.%{snap}
 Release:	2
 Epoch:		1
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-%{version}.tar.gz
-# Source0-md5:	f0f4c90fa0ae346f53bf19a165e071a6
+Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-3.0-%{snap}.tar.gz
+# Source0-md5:	7a39b08e1a8b1b63917277a021d403eb
 URL:		http://www.linuxprinting.org/foomatic.html
 BuildRequires:	a2ps
 BuildRequires:	autoconf
@@ -101,7 +102,7 @@ ppromatic jest interfejsem do PPR dla drukarek zdefiniowanych w pliku
 PPD (PPD-O-Matic) uzyskanym z Linux Printing Database.
 
 %prep
-%setup -q
+%setup -q -n %{name}-3.0-%{snap}
 
 %build
 %{__aclocal}
@@ -135,6 +136,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n cups-filter-foomatic
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_ulibdir}/cups/backend/beh
 %attr(755,root,root) %{_ulibdir}/cups/filter/*
 
 %if %{with ppr}
