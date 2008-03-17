@@ -7,7 +7,7 @@ Summary:	System for using free software printer drivers
 Summary(pl.UTF-8):	System umożliwiający używanie darmowych sterowników drukarek
 Name:		foomatic-filters
 Version:	3.0.%{snap}
-Release:	2
+Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/System
