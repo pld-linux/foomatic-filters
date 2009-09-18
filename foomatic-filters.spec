@@ -2,18 +2,17 @@
 %bcond_with	ppr	# ppr support disabled until we have ppr.spec in working shape
 #
 %include	/usr/lib/rpm/macros.perl
-%define		snap	20080317
 Summary:	System for using free software printer drivers
 Summary(pl.UTF-8):	System umożliwiający używanie darmowych sterowników drukarek
 Name:		foomatic-filters
-Version:	3.0.%{snap}
+Version:	4.0.3
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.linuxprinting.org/download/foomatic/%{name}-3.0-%{snap}.tar.gz
-# Source0-md5:	7a39b08e1a8b1b63917277a021d403eb
-URL:		http://www.linuxprinting.org/foomatic.html
+Source0:	http://www.openprinting.org/download/foomatic/foomatic-filters-4.0.3.tar.gz
+# Source0-md5:	f2fb7c48cc6b1af6f76dd0529d6dbd98
+URL:		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
 BuildRequires:	a2ps
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -34,36 +33,6 @@ drukarek z popularnymi uniksowymi serwerami wydruków. Obsługuje LPD,
 PDQ, CUPS, VA Linux LPD, LPRng, PPR i bezpośrednie drukowanie bez
 kolejkowania oraz dowolny wolnodostępny sterownik, dla którego
 parametry zostały wprowadzone do bazy danych.
-
-%package gswrapper
-Summary:	foomatic wrapper for ghostscript
-Summary(pl.UTF-8):	wrapper dla ghostscripta do użycia z foomatic
-Group:		Applications/System
-Requires:	a2ps
-Requires:	ghostscript
-Obsoletes:	foomatic-gswrapper
-
-%description gswrapper
-A little Ghostscript regularization script. It massages arguments to
-make Ghostscript execute properly as a filter, with output on stdout
-and errors etc on stderr.
-
-NOTE: This script is needed in a few situations only and may not work
-with some Ghostscript versions. Moreover in some situations his
-presence in the system may have effect that Your printer will not
-print. So - Do not install this package if You don't know what You're
-doing.
-
-%description gswrapper -l pl.UTF-8
-Mały skrypt uzdatniający Ghostscripta. Obrabia parametry tak, żeby
-Ghostscript działał właściwie jako filtr, generując dane wyjściowe na
-stdout, a błędy na stderr.
-
-UWAGA: Ten skrypt jest potrzebny tylko w kilku przypadkach i może nie
-działac z niektórymi wersjami Ghostscripta. Ponadto w niektórych
-sytuacjach jego obecność w systemie może spowodować, że drukarka nie
-będzie drukowała. Tak więc - nie instaluj tego pakietu, jeśli nie
-wiesz, co robisz.
 
 %package -n cups-filter-foomatic
 Summary:	cupsomatic - CUPS filter
@@ -102,7 +71,7 @@ ppromatic jest interfejsem do PPR dla drukarek zdefiniowanych w pliku
 PPD (PPD-O-Matic) uzyskanym z Linux Printing Database.
 
 %prep
-%setup -q -n %{name}-3.0-%{snap}
+%setup -q
 
 %build
 %{__aclocal}
@@ -128,11 +97,6 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/foomatic/filter.conf
 %attr(755,root,root) %{_bindir}/foomatic-rip
 %{_mandir}/man1/foomatic-rip*
-
-%files gswrapper
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/foomatic-gswrapper
-%{_mandir}/man1/foomatic-gswrapper*
 
 %files -n cups-filter-foomatic
 %defattr(644,root,root,755)
