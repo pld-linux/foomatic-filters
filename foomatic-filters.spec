@@ -5,13 +5,13 @@
 Summary:	System for using free software printer drivers
 Summary(pl.UTF-8):	System umożliwiający używanie darmowych sterowników drukarek
 Name:		foomatic-filters
-Version:	4.0.3
+Version:	4.0.5
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/System
-Source0:	http://www.openprinting.org/download/foomatic/foomatic-filters-4.0.3.tar.gz
-# Source0-md5:	f2fb7c48cc6b1af6f76dd0529d6dbd98
+Source0:	http://www.openprinting.org/download/foomatic/%{name}-%{version}.tar.gz
+# Source0-md5:	fd99dac3a36807a47ffa4f9eb15c1b07
 URL:		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
 BuildRequires:	a2ps
 BuildRequires:	autoconf
