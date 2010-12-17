@@ -5,13 +5,13 @@
 Summary:	System for using free software printer drivers
 Summary(pl.UTF-8):	System umożliwiający używanie darmowych sterowników drukarek
 Name:		foomatic-filters
-Version:	4.0.5
+Version:	4.0.6
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.openprinting.org/download/foomatic/%{name}-%{version}.tar.gz
-# Source0-md5:	fd99dac3a36807a47ffa4f9eb15c1b07
+# Source0-md5:	9bca3d3d83192a3741a34bd9b1859b1e
 URL:		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
 BuildRequires:	a2ps
 BuildRequires:	autoconf
@@ -40,8 +40,8 @@ Summary(pl.UTF-8):	cupsomatic - filtr do CUPS
 Group:		Applications/System
 Requires:	%{name} = %{epoch}:%{version}
 Requires:	cups
-Obsoletes:	foomatic-cups
 Obsoletes:	cups-foomatic
+Obsoletes:	foomatic-cups
 
 %description -n cups-filter-foomatic
 Cupsomatic is intended to be used as a CUPS filter for printers
