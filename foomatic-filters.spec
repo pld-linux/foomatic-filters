@@ -5,17 +5,17 @@
 Summary:	System for using free software printer drivers
 Summary(pl.UTF-8):	System umożliwiający używanie darmowych sterowników drukarek
 Name:		foomatic-filters
-Version:	4.0.15
+Version:	4.0.17
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Applications/System
 Source0:	http://www.openprinting.org/download/foomatic/%{name}-%{version}.tar.gz
-# Source0-md5:	1b7efcdc57340915647daa5b5c15b0ef
+# Source0-md5:	b05f5dcbfe359f198eef3df5b283d896
 URL:		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
-BuildRequires:	a2ps
-BuildRequires:	autoconf
+BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake
+BuildRequires:	dbus-devel
 BuildRequires:	rpm-perlprov
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -76,7 +76,10 @@ PPD (PPD-O-Matic) uzyskanym z Linux Printing Database.
 %build
 %{__aclocal}
 %{__autoconf}
-%configure
+%{__autoheader}
+%{__automake}
+%configure \
+	--disable-file-converter-check
 %{__make}
 
 %install
@@ -85,6 +88,10 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR="$RPM_BUILD_ROOT"
 
 ln -sf %{_bindir}/foomatic-rip $RPM_BUILD_ROOT%{_ulibdir}/cups/filter/cupsomatic
+
+%if %{without ppr}
+%{__rm} -r $RPM_BUILD_ROOT%{_ulibdir}/ppr
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,12 +103,13 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/foomatic/direct
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/foomatic/filter.conf
 %attr(755,root,root) %{_bindir}/foomatic-rip
-%{_mandir}/man1/foomatic-rip*
+%{_mandir}/man1/foomatic-rip.1*
 
 %files -n cups-filter-foomatic
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_ulibdir}/cups/backend/beh
-%attr(755,root,root) %{_ulibdir}/cups/filter/*
+%attr(755,root,root) %{_ulibdir}/cups/filter/cupsomatic
+%attr(755,root,root) %{_ulibdir}/cups/filter/foomatic-rip
 
 %if %{with ppr}
 %files ppr
