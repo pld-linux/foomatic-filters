@@ -1,4 +1,5 @@
 #
+# Conditional build:
 %bcond_with	ppr	# ppr support disabled until we have ppr.spec in working shape
 #
 %include	/usr/lib/rpm/macros.perl
@@ -8,7 +9,7 @@ Name:		foomatic-filters
 Version:	4.0.17
 Release:	1
 Epoch:		1
-License:	GPL
+License:	GPL v2+
 Group:		Applications/System
 Source0:	http://www.openprinting.org/download/foomatic/%{name}-%{version}.tar.gz
 # Source0-md5:	b05f5dcbfe359f198eef3df5b283d896
