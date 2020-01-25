@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_with	ppr	# ppr support disabled until we have ppr.spec in working shape
 #
-%include	/usr/lib/rpm/macros.perl
 Summary:	System for using free software printer drivers
 Summary(pl.UTF-8):	System umożliwiający używanie darmowych sterowników drukarek
 Name:		foomatic-filters
