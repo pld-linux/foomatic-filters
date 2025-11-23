@@ -10,9 +10,9 @@ Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Applications/System
-Source0:	http://www.openprinting.org/download/foomatic/%{name}-%{version}.tar.gz
+Source0:	https://www.openprinting.org/download/foomatic/%{name}-%{version}.tar.gz
 # Source0-md5:	b05f5dcbfe359f198eef3df5b283d896
-URL:		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
+URL:		https://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
 BuildRequires:	autoconf >= 2.61
 BuildRequires:	automake
 BuildRequires:	dbus-devel
